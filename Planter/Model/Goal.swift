@@ -1,7 +1,14 @@
+//
+//  Goal.swift
+//  Planter
+//
+//  Created by Kory Arfania.
+//
+
 import Foundation
 
 // Goal Model: represents a single daily goal and its information
-struct Goal: Identifiable, Codable {
+struct Goal: Identifiable, Codable, Decodable {
     enum GoalType {
         case walking
         case running

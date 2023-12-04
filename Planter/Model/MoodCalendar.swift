@@ -1,3 +1,10 @@
+//
+//  MoodCalendar.swift
+//  Planter
+//
+//  Created by Kory Arfania.
+//
+
 import Foundation
 
 // MoodCalendar Model: represents a user's mood calendar, with emojis assigned to mood per day

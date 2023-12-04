@@ -1,3 +1,10 @@
+//
+//  UserViewModel.swift
+//  Planter
+//
+//  Created by Kory Arfania.
+//
+
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
