@@ -1,8 +1,8 @@
 import Foundation
 
 // MoodCalendar Model: represents a user's mood calendar, with emojis assigned to mood per day
-struct MoodCalendar {
-    enum Mood: String {
+struct MoodCalendar: Codable {
+    enum Mood: String, Codable {
         case happy = "😄"
         case sad = "😢"
         case neutral = "😐"

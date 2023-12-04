@@ -1,7 +1,7 @@
 import Foundation
 
 // Goal Model: represents a single daily goal and its information
-struct Goal: Identifiable {
+struct Goal: Identifiable, Codable {
     enum GoalType {
         case walking
         case running
@@ -10,7 +10,7 @@ struct Goal: Identifiable {
         case steps
         case miles
     }
-    let id: UUID = UUID()
+    let gid: String = UUID().uuidString
     let type: GoalType
     let unit: GoalUnit
     let goalAmount: Double
