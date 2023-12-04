@@ -10,15 +10,15 @@ import FirebaseAuth
 
 // User Model
 struct User: Identifiable, Codable{
-    let uid: String
+    let id: String
     var name: String
     var email: String
     var plants: [Plant] = []
     var currGoal: Goal
     var moods: MoodCalendar = MoodCalendar()
 
-    init(uid: String, name: String, email: String, plants: [Plant], currGoal: Goal, moods: MoodCalendar) {
-        self.uid = uid
+    init(id: String = UUID().uuidString, name: String, email: String, plants: [Plant], currGoal: Goal, moods: MoodCalendar) {
+        self.id = id
         self.name = name
         self.email = email
         self.plants = plants

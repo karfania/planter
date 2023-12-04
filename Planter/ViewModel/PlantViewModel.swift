@@ -12,14 +12,14 @@ class PlantViewModel: ObservableObject {
     private let BASE_URL_DETAILS = "https://perenual.com/api/species/details/"
 
     @Published var isLoading = false
-    @Published var plants: [Plant]
+    @Published var plants: [Plant] = []
 
-    var plantList: [PlantList]
-    var plantDetails: PlantDetails
+    var plantList: [PlantList] = []
+    var plantDetails: PlantDetails? = nil
 
     // async function to retrieve list of plants from API
-    func fetchPlantList() async {
-        let url = URL(string: "\(BASE_URL)?key=\(ProcessInfo.processInfo.environment["API_KEY"])")!
+    func fetchPlantList() async -> [PlantList] {
+        let url = URL(string: "\(BASE_URL_LIST)?key=\(String(describing: ProcessInfo.processInfo.environment["API_KEY"]))")!
         var urlRequest = URLRequest(url: url)
         //urlRequest.setValue("Client-ID \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
         
@@ -31,11 +31,13 @@ class PlantViewModel: ObservableObject {
             // decoding data
             let decodedPlantListData = try JSONDecoder().decode([PlantList].self, from: data)
             
-            // set photos property
+            // set plantList property
             DispatchQueue.main.async {
                 self.plantList = decodedPlantListData
                 self.isLoading = false
             }
+            
+            
             
         } catch {
             print(error)
@@ -43,11 +45,15 @@ class PlantViewModel: ObservableObject {
                 self.isLoading = false
             }
         }
+        
+        // return plantList
+        return plantList
     }
 
     // async function to retrieve detailed information for a single plant from API
-    func fetchPlantDetails(id: String) async {
-        let url = URL(string: "\(BASE_URL_DETAILS)\(id)?key=\(ProcessInfo.processInfo.environment["API_KEY"])")!
+    func fetchPlantDetails(id: String) async -> PlantDetails?
+    {
+        let url = URL(string: "\(BASE_URL_DETAILS)\(id)?key=\(String(describing: ProcessInfo.processInfo.environment["API_KEY"]))")!
         var urlRequest = URLRequest(url: url)
         //urlRequest.setValue("Client-ID \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
         
@@ -59,9 +65,9 @@ class PlantViewModel: ObservableObject {
             // decoding data
             let decodedPlantData = try JSONDecoder().decode(PlantDetails.self, from: data)
             
-            // set photos property
+            // set plantDetails property
             DispatchQueue.main.async {
-                self.plants = decodedPlantData
+                self.plantDetails = decodedPlantData
                 self.isLoading = false
             }
             
@@ -71,5 +77,8 @@ class PlantViewModel: ObservableObject {
                 self.isLoading = false
             }
         }
+        
+        // return plantDetail for specific plant
+        return plantDetails ?? nil
     }
 }

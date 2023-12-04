@@ -12,8 +12,8 @@ import FirebaseFirestoreSwift
 import HealthKit
 import CoreLocation
 
-class UserViewModel: ObservableObject, CLLocationManagerDelegate {
-    @Published var user: User?
+class UserViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var user: User
     @Published var plants: [Plant] = []
     @Published var currGoal: Goal?
     @Published var moods: MoodCalendar?
@@ -25,6 +25,33 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
     let plantViewModel = PlantViewModel()
     let moodCalendarViewModel = MoodCalendarViewModel()
     
+    init(user: User, plants: [Plant], currGoal: Goal? = nil, moods: MoodCalendar? = nil) {
+        self.user = user
+        self.plants = plants
+        self.currGoal = currGoal
+        self.moods = moods
+    }
+    
+    /* Setting up CLLocation Manager with necessary properties */
+    private func setupLocationManager() {
+        // ensuring services are enabled
+        guard CLLocationManager.locationServicesEnabled() else {
+            print("Location services are not enabled.")
+            return
+        }
+        // getting authorization
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        // setting properties
+        locationManager.distanceFilter = 1000 // update dist every 1km user moves
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.delegate = self
+        
+        locationManager.startUpdatingLocation()
+        
+    }
+    
 
     /* Create new user & add to firebase */
     func createUser(name: String, email: String, password: String) {
@@ -35,7 +62,7 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
                 return
             }
             print("Created user: \(user)")
-            self.user = User(uid: user.uid, name: name, email: email, plants: [], currGoal: Goal(type: .walking, unit: .steps, goalAmount: 0, progress: 0, completed: false, dateAssigned: Date()), moods: MoodCalendar())
+            self.user = User(id: user.uid, name: name, email: email, plants: [], currGoal: Goal(type: .walking, unit: .steps, goalAmount: 0, progress: 0, completed: false, dateAssigned: Date()), moods: MoodCalendar())
             self.updateUser()
         }
     }
@@ -44,30 +71,37 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
     func loginUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             // call getUserData to retrieve user data from Firestore upon login
-            guard let user = authResult?.user,
+            guard let fbUser = authResult?.user,
                   error == nil else {
                 print("Error logging in user: \(error!.localizedDescription)")
                 return
             }
-            print("Logged in user: \(user)")
-            self.user = user
-            self.updateUser()
-            completion(nil)
+            // getting user data and updating user data member
+            print("Logged in user: \(self.user)")
+            self.getUserData(uid: "uuid from login") { fetchedUser in
+                if let user = fetchedUser {
+                    self.user = user
+                } else {
+                    print("Error: Unable to retrieve user data from Firebase.")
+                }
+            }
         }
     }
 
     /* Retrieve user data from Firestore to use upon login */
-    private func getUserData(uid: String, completion: @escaping (User) -> Void) {
+    private func getUserData(uid: String, completion: @escaping (User?) -> Void) {
         let db = Firestore.firestore()
         db.collection("users").document(uid).getDocument { document, error in
             // ensure we retrieve user information for user with uid
             guard let document = document,
                   error == nil else {
                 print("Error getting user data: \(error!.localizedDescription)")
+                completion(nil)
                 return
             }
             guard let user = try? document.data(as: User.self) else {
                 print("Error getting user data: \(error!.localizedDescription)")
+                completion(nil)
                 return
             }
             completion(user)
@@ -77,7 +111,7 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
     /* Update user data (general) in Firestore */
     func updateUser() {
         do {
-            try db.collection("users").document(user!.uid).setData(from: user)
+            try db.collection("users").document(user.id).setData(from: user)
         } catch {
             print("Error updating user data: \(error.localizedDescription)")
         }
@@ -91,7 +125,7 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
                 return
             }
             print("Changed email to: \(email)")
-            self.user!.email = email
+            self.user.email = email
             self.updateUser()
         }
     }
@@ -109,13 +143,13 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
 
     /* Change user's goal & reset progress */
     func changeGoal(to goal: Goal) {
-        user!.currGoal = goal
+        user.currGoal = goal
         updateUser()
     }
 
     /* Change user's mood for a specific date */
     func changeMood(for date: Date, to mood: MoodCalendar.Mood) {
-        moodCalendarViewModel.changeMood(for: date, to: mood)
+        moodCalendarViewModel.setMood(for: date, to: mood)
     }
 
     /* Update user's goal progress/completion from HealthKit */
@@ -127,7 +161,7 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
 
         // grabbing appropriate HealthKit data type based on user's type for goal
         let type: HKQuantityType
-        switch currGoal.unit {
+        switch currGoal!.unit {
         case .steps:
             type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         case.miles:
@@ -155,11 +189,11 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
             }
             // updating progress and completion status of goal
             let goalProgress = sum.doubleValue(for: HKUnit.count())
-            self.currGoal.progress = goalProgress
-            self.currGoal.completed = goalProgress >= self.currGoal.goalAmount
+            self.currGoal?.progress = goalProgress
+            self.currGoal?.completed = goalProgress >= self.currGoal!.goalAmount
             // if goal is completed, add new plant to user's collection and update user
-            if self.currGoal.completed {
-                self.addPlantUponGoalCompletion(at: locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
+            if self.currGoal!.completed {
+                self.addPlantUponGoalCompletion(at: CodableCoord(self.locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)))
             }
             self.updateUser()
             completion(nil)
@@ -170,16 +204,26 @@ class UserViewModel: ObservableObject, CLLocationManagerDelegate {
     }
 
     /* Adding new plant to user's collection upon completion */
-    func addPlantUponGoalCompletion(at location: CLLocationCoordinate2D) {
+    func addPlantUponGoalCompletion(at location: CodableCoord) {
         Task {
-            let retreivedPlantList = await plantViewModel.fetchPlantList()
-            // checking if we don't have this plant yet, in which case add to user's collection
-            if let newPlant = retreivedPlantList.first(where: { plant in
-                !plants.contains(where: { $0.id == plant.id })
-            }) {
+            do {
+                let retreivedPlantList = await plantViewModel.fetchPlantList()
+                // checking if we don't have this plant yet, in which case add to user's collection
+                guard let newPlant = retreivedPlantList.first(where: { plant in
+                    !plants.contains(where: { $0.id == plant.id })
+                }) else {
+                    print("Error: No new plant found.")
+                    return
+                }
                 // get details for new plant
-                let newPlantDetails = await plantViewModel.fetchPlantDetails(id: newPlant.id)
-                let plant = Plant(id: newPlant.id, name: newPlant.name, cycle: newPlant.cycle, watering: newPlant.watering, bark: newPlantDetails.bark, leaves: newPlantDetails.leaves, attracts: newPlantDetails.attracts, default_image: newPlant.default_image, location: location)
+                if let newPlantDetails = await plantViewModel.fetchPlantDetails(id: newPlant.id) {
+                    let plant = Plant(id: newPlant.id, name: newPlant.name, cycle: newPlant.cycle, watering: newPlant.watering, bark: newPlantDetails.bark, leaves: newPlantDetails.leaves, attracts: newPlantDetails.attracts, default_image: newPlant.default_image, location_obtained: location)
+                    plants.append(plant)
+                    self.updateUser()
+                    return
+                }
+                // plant has no details, leave blank
+                let plant = Plant(id: newPlant.id, name: newPlant.name, cycle: newPlant.cycle, watering: newPlant.watering, bark: "", leaves: "", attracts: [], default_image: newPlant.default_image, location_obtained: location)
                 plants.append(plant)
                 self.updateUser()
             }

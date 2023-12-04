@@ -34,11 +34,13 @@
 		D42471302B1E3D0F00FAD4BE /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D424712F2B1E3D0F00FAD4BE /* FirebaseRemoteConfigSwift */; };
 		D42471322B1E3D0F00FAD4BE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D42471312B1E3D0F00FAD4BE /* FirebaseStorage */; };
 		D42471342B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D42471332B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community */; };
+		D443002D2B1E612700D72A51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D443002C2B1E612700D72A51 /* GoogleService-Info.plist */; };
 		D49EF1D92B1E3E300006F154 /* MoodCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1D82B1E3E300006F154 /* MoodCalendar.swift */; };
 		D49EF1DB2B1E3E580006F154 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1DA2B1E3E580006F154 /* Goal.swift */; };
 		D49EF1E02B1E3ECC0006F154 /* MoodCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1DD2B1E3ECC0006F154 /* MoodCalendarViewModel.swift */; };
 		D49EF1E12B1E3ECC0006F154 /* PlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1DE2B1E3ECC0006F154 /* PlantViewModel.swift */; };
 		D49EF1E32B1E3F290006F154 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1E22B1E3F290006F154 /* UserViewModel.swift */; };
+		D49EF1E52B1E58960006F154 /* CodableCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1E42B1E58960006F154 /* CodableCoord.swift */; };
 		D4CD0C082B1C1E0700929452 /* PlanterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD0C072B1C1E0700929452 /* PlanterApp.swift */; };
 		D4CD0C0A2B1C1E0700929452 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD0C092B1C1E0700929452 /* ContentView.swift */; };
 		D4CD0C0C2B1C1E0800929452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CD0C0B2B1C1E0800929452 /* Assets.xcassets */; };
@@ -48,11 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D443002C2B1E612700D72A51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D49EF1D82B1E3E300006F154 /* MoodCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendar.swift; sourceTree = "<group>"; };
 		D49EF1DA2B1E3E580006F154 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		D49EF1DD2B1E3ECC0006F154 /* MoodCalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCalendarViewModel.swift; sourceTree = "<group>"; };
 		D49EF1DE2B1E3ECC0006F154 /* PlantViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantViewModel.swift; sourceTree = "<group>"; };
 		D49EF1E22B1E3F290006F154 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		D49EF1E42B1E58960006F154 /* CodableCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCoord.swift; sourceTree = "<group>"; };
 		D4CD0C042B1C1E0700929452 /* Planter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CD0C072B1C1E0700929452 /* PlanterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanterApp.swift; sourceTree = "<group>"; };
 		D4CD0C092B1C1E0700929452 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		D4CD0C062B1C1E0700929452 /* Planter */ = {
 			isa = PBXGroup;
 			children = (
+				D443002C2B1E612700D72A51 /* GoogleService-Info.plist */,
 				D4CD0C172B1C200900929452 /* ViewModel */,
 				D4CD0C162B1C200400929452 /* View */,
 				D4CD0C152B1C1FFD00929452 /* Model */,
@@ -144,6 +149,7 @@
 				D4CD0C1A2B1C211400929452 /* Plant.swift */,
 				D49EF1D82B1E3E300006F154 /* MoodCalendar.swift */,
 				D49EF1DA2B1E3E580006F154 /* Goal.swift */,
+				D49EF1E42B1E58960006F154 /* CodableCoord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 			files = (
 				D4CD0C0F2B1C1E0800929452 /* Preview Assets.xcassets in Resources */,
 				D4CD0C0C2B1C1E0800929452 /* Assets.xcassets in Resources */,
+				D443002D2B1E612700D72A51 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +277,7 @@
 			files = (
 				D49EF1D92B1E3E300006F154 /* MoodCalendar.swift in Sources */,
 				D4CD0C0A2B1C1E0700929452 /* ContentView.swift in Sources */,
+				D49EF1E52B1E58960006F154 /* CodableCoord.swift in Sources */,
 				D4CD0C1B2B1C211400929452 /* Plant.swift in Sources */,
 				D49EF1E02B1E3ECC0006F154 /* MoodCalendarViewModel.swift in Sources */,
 				D4CD0C082B1C1E0700929452 /* PlanterApp.swift in Sources */,

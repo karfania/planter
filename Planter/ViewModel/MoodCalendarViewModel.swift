@@ -11,24 +11,59 @@ import FirebaseAuth
 class MoodCalendarViewModel: ObservableObject {
     @Published var user: User?
 
-    let UserViewModel = UserViewModel()
+    let userViewModel = UserViewModel()
     
-    /* Update user's mood calendar */
-    func updateMoodCalendar(for user: User, to moodCalendar: MoodCalendar) {
-        user.moods = moodCalendar
-        UserViewModel.updateUser()
+    /* Set mood for a specific date & update user's calendar */
+    func setMood(for date: Date, to mood: MoodCalendar.Mood?) {
+        self.user!.moods.calendar[Calendar.current.startOfDay(for: date)] = mood
+        userViewModel.updateUser()
     }
 
-    /* Change user's mood for a specific date */
-    func changeMood(for date: Date, to mood: MoodCalendar.Mood) {
-        user!.moods.setMood(for: date, to: mood)
-        UserViewModel.updateUser()
+    /* Mood for specific date */
+    func getMood(for date: Date) -> MoodCalendar.Mood? {
+        return user!.moods.calendar[Calendar.current.startOfDay(for: date)]
+    }
+
+    /* mood for month and year */
+    func getMood(for month: Int, year: Int) -> [Date: MoodCalendar.Mood] {
+        var monthMoods: [Date: MoodCalendar.Mood] = [:]
+        for (date, mood) in user!.moods.calendar {
+            let _month = Calendar.current.component(.month, from: date)
+            let _year = Calendar.current.component(.year, from: date)
+            if _month == month && _year == year {
+                monthMoods[date] = mood
+            }
+        }
+        return monthMoods
+    }
+
+    /* Mood for year */
+    func getMood(for year: Int) -> [Date: MoodCalendar.Mood] {
+        var yearMoods: [Date: MoodCalendar.Mood] = [:]
+        for (date, mood) in user!.moods.calendar {
+            let _year = Calendar.current.component(.year, from: date)
+            if _year == year {
+                yearMoods[date] = mood
+            }
+        }
+        return yearMoods
+    }
+
+    /* Getting all moods for a user */
+    func getAllMoods() -> [Date: MoodCalendar.Mood] {
+        return user!.moods.calendar
+    }
+    
+    /* Update user's mood calendar entirely */
+    func setMoodCalendar(for user: User, to moodCalendar: MoodCalendar) {
+        self.user!.moods = moodCalendar
+        userViewModel.updateUser()
     }
 
     /* Remove mood for a specific date */
     func removeMood(for date: Date) {
-        user!.moods.setMood(for: date, to: nil)
-        UserViewModel.updateUser()
+        self.user!.moods.calendar[Calendar.current.startOfDay(for: date)] = nil
+        userViewModel.updateUser()
     }
 
 }

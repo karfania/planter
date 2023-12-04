@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 // grabs different URLs returned by API for plant photos
 struct PlantPhotoURLs: Codable, Hashable {
@@ -44,7 +45,7 @@ struct PlantList: Identifiable, Hashable, Decodable {
     }
 }
 
-struct PlantDetails: Identifiable, Hashable, Decodable {
+struct PlantDetails: Identifiable, Hashable, Decodable  {
     let id: String
     let bark: String
     let leaves: String
@@ -60,7 +61,8 @@ struct PlantDetails: Identifiable, Hashable, Decodable {
 }
 
 // combines general and detailed plant information for a single plant
-struct Plant: Decodable {
+struct Plant: Identifiable, Codable {
+    let pid: String
     let id: String
     let name: String
     let cycle: String
@@ -69,8 +71,10 @@ struct Plant: Decodable {
     let leaves: String
     let attracts: [String]
     let default_image: PlantPhotoURLs
+    let location_obtained: CodableCoord
 
-    init(id: String, name: String, cycle: String, watering: String, bark: String, leaves: String, attracts: [String], default_image: PlantPhotoURLs) {
+    init(pid: String = UUID().uuidString, id: String, name: String, cycle: String, watering: String, bark: String, leaves: String, attracts: [String], default_image: PlantPhotoURLs, location_obtained: CodableCoord) {
+        self.pid = pid
         self.id = id
         self.name = name
         self.cycle = cycle
@@ -79,6 +83,7 @@ struct Plant: Decodable {
         self.leaves = leaves
         self.attracts = attracts
         self.default_image = default_image
+        self.location_obtained = location_obtained
     }
 }
 
