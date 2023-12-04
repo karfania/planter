@@ -2,7 +2,7 @@
 //  User.swift
 //  Planter
 //
-//  Created by Kory Arfania on 12/2/23.
+//  Created by Kory Arfania.
 //
 
 import Foundation

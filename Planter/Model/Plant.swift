@@ -2,13 +2,13 @@
 //  Plant.swift
 //  Planter
 //
-//  Created by Kory Arfania on 12/2/23.
+//  Created by Kory Arfania.
 //
 
 import Foundation
 
 // grabs different URLs returned by API for plant photos
-struct PlantPhotoURLs: Codable {
+struct PlantPhotoURLs: Codable, Hashable {
     let image_id: Int
     let license: Int
     let license_name: String

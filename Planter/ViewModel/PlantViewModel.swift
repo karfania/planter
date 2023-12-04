@@ -1,3 +1,10 @@
+//
+//  PlantViewModel.swift
+//  Planter
+//
+//  Created by Kory Arfania.
+//
+
 import Foundation
 
 class PlantViewModel: ObservableObject {
