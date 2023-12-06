@@ -38,24 +38,19 @@ struct PlantList: Identifiable, Hashable, Decodable {
         hasher.combine(name)
         hasher.combine(cycle)
         hasher.combine(watering)
-        // hasher.combine(bark)
-        // hasher.combine(leaves)
-        // hasher.combine(attracts)
         hasher.combine(default_image)
     }
 }
 
 struct PlantDetails: Identifiable, Hashable, Decodable  {
     let id: String
-    let bark: String
-    let leaves: String
+    let description: String
     let attracts: [String]
 
     // adding hashing functionality
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        hasher.combine(bark)
-        hasher.combine(leaves)
+        hasher.combine(description)
         hasher.combine(attracts)
     }
 }
@@ -67,20 +62,18 @@ struct Plant: Identifiable, Codable {
     let name: String
     let cycle: String
     let watering: String
-    let bark: String
-    let leaves: String
+    let description: String
     let attracts: [String]
     let default_image: PlantPhotoURLs
     let location_obtained: CodableCoord
 
-    init(pid: String = UUID().uuidString, id: String, name: String, cycle: String, watering: String, bark: String, leaves: String, attracts: [String], default_image: PlantPhotoURLs, location_obtained: CodableCoord) {
+    init(pid: String = UUID().uuidString, id: String, name: String, cycle: String, watering: String, description: String, attracts: [String], default_image: PlantPhotoURLs, location_obtained: CodableCoord) {
         self.pid = pid
         self.id = id
         self.name = name
         self.cycle = cycle
         self.watering = watering
-        self.bark = bark
-        self.leaves = leaves
+        self.description = description
         self.attracts = attracts
         self.default_image = default_image
         self.location_obtained = location_obtained

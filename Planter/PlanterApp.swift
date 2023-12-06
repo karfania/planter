@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseCore
 
 
+/* Code from FireBase initialization */
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -20,15 +21,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct PlanterApp: App {
-  // register app delegate for Firebase setup
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    // injecting UserViewModel for persistence
+    @StateObject private var userViewModel = UserViewModel()
+    
+    // register app delegate for Firebase setup
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
 
-  var body: some Scene {
-    WindowGroup {
-      NavigationView {
-        ContentView()
-      }
+
+    var body: some Scene {
+        WindowGroup {
+            NavigationView {
+                ContentView()
+            }
+        }
     }
-  }
 }

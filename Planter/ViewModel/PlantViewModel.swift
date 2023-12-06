@@ -54,7 +54,7 @@ class PlantViewModel: ObservableObject {
     func fetchPlantDetails(id: String) async -> PlantDetails?
     {
         let url = URL(string: "\(BASE_URL_DETAILS)\(id)?key=\(String(describing: ProcessInfo.processInfo.environment["API_KEY"]))")!
-        var urlRequest = URLRequest(url: url)
+        let urlRequest = URLRequest(url: url)
         //urlRequest.setValue("Client-ID \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
         
         do {

@@ -35,6 +35,17 @@
 		D42471322B1E3D0F00FAD4BE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D42471312B1E3D0F00FAD4BE /* FirebaseStorage */; };
 		D42471342B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D42471332B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community */; };
 		D443002D2B1E612700D72A51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D443002C2B1E612700D72A51 /* GoogleService-Info.plist */; };
+		D49EAB442B1EF65C0059FDBE /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB432B1EF65C0059FDBE /* LandingPage.swift */; };
+		D49EAB862B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D49EAB852B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf */; };
+		D49EAB882B1FBB150059FDBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB872B1FBB150059FDBE /* LoginView.swift */; };
+		D49EAB8A2B1FBB420059FDBE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB892B1FBB420059FDBE /* SignUpView.swift */; };
+		D49EAB8C2B1FBB750059FDBE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB8B2B1FBB750059FDBE /* HomeView.swift */; };
+		D49EAB8E2B1FBB840059FDBE /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB8D2B1FBB840059FDBE /* LogoutView.swift */; };
+		D49EAB902B1FBB9E0059FDBE /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB8F2B1FBB9E0059FDBE /* GardenView.swift */; };
+		D49EAB922B1FBC0C0059FDBE /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB912B1FBC0C0059FDBE /* EditProfileView.swift */; };
+		D49EAB942B1FBC210059FDBE /* EditGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB932B1FBC210059FDBE /* EditGoalView.swift */; };
+		D49EAB962B1FBC400059FDBE /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB952B1FBC400059FDBE /* ProgressBar.swift */; };
+		D49EAB982B1FBC510059FDBE /* MoodCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB972B1FBC510059FDBE /* MoodCalendarView.swift */; };
 		D49EF1D92B1E3E300006F154 /* MoodCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1D82B1E3E300006F154 /* MoodCalendar.swift */; };
 		D49EF1DB2B1E3E580006F154 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1DA2B1E3E580006F154 /* Goal.swift */; };
 		D49EF1E02B1E3ECC0006F154 /* MoodCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1DD2B1E3ECC0006F154 /* MoodCalendarViewModel.swift */; };
@@ -51,6 +62,18 @@
 
 /* Begin PBXFileReference section */
 		D443002C2B1E612700D72A51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D49EAB432B1EF65C0059FDBE /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
+		D49EAB852B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HedvigLettersSerif-Regular-VariableFont_opsz.ttf"; sourceTree = "<group>"; };
+		D49EAB872B1FBB150059FDBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D49EAB892B1FBB420059FDBE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D49EAB8B2B1FBB750059FDBE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D49EAB8D2B1FBB840059FDBE /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		D49EAB8F2B1FBB9E0059FDBE /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		D49EAB912B1FBC0C0059FDBE /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		D49EAB932B1FBC210059FDBE /* EditGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalView.swift; sourceTree = "<group>"; };
+		D49EAB952B1FBC400059FDBE /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		D49EAB972B1FBC510059FDBE /* MoodCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendarView.swift; sourceTree = "<group>"; };
+		D49EAB992B1FBDA40059FDBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D49EF1D82B1E3E300006F154 /* MoodCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendar.swift; sourceTree = "<group>"; };
 		D49EF1DA2B1E3E580006F154 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		D49EF1DD2B1E3ECC0006F154 /* MoodCalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCalendarViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +130,7 @@
 		D4CD0BFB2B1C1E0700929452 = {
 			isa = PBXGroup;
 			children = (
+				D49EAB852B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf */,
 				D4CD0C062B1C1E0700929452 /* Planter */,
 				D4CD0C052B1C1E0700929452 /* Products */,
 			);
@@ -123,6 +147,7 @@
 		D4CD0C062B1C1E0700929452 /* Planter */ = {
 			isa = PBXGroup;
 			children = (
+				D49EAB992B1FBDA40059FDBE /* Info.plist */,
 				D443002C2B1E612700D72A51 /* GoogleService-Info.plist */,
 				D4CD0C172B1C200900929452 /* ViewModel */,
 				D4CD0C162B1C200400929452 /* View */,
@@ -158,6 +183,16 @@
 			isa = PBXGroup;
 			children = (
 				D4CD0C092B1C1E0700929452 /* ContentView.swift */,
+				D49EAB432B1EF65C0059FDBE /* LandingPage.swift */,
+				D49EAB892B1FBB420059FDBE /* SignUpView.swift */,
+				D49EAB872B1FBB150059FDBE /* LoginView.swift */,
+				D49EAB8B2B1FBB750059FDBE /* HomeView.swift */,
+				D49EAB8D2B1FBB840059FDBE /* LogoutView.swift */,
+				D49EAB8F2B1FBB9E0059FDBE /* GardenView.swift */,
+				D49EAB912B1FBC0C0059FDBE /* EditProfileView.swift */,
+				D49EAB932B1FBC210059FDBE /* EditGoalView.swift */,
+				D49EAB952B1FBC400059FDBE /* ProgressBar.swift */,
+				D49EAB972B1FBC510059FDBE /* MoodCalendarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +300,7 @@
 				D4CD0C0F2B1C1E0800929452 /* Preview Assets.xcassets in Resources */,
 				D4CD0C0C2B1C1E0800929452 /* Assets.xcassets in Resources */,
 				D443002D2B1E612700D72A51 /* GoogleService-Info.plist in Resources */,
+				D49EAB862B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,13 +312,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D49EF1D92B1E3E300006F154 /* MoodCalendar.swift in Sources */,
+				D49EAB962B1FBC400059FDBE /* ProgressBar.swift in Sources */,
+				D49EAB922B1FBC0C0059FDBE /* EditProfileView.swift in Sources */,
+				D49EAB8C2B1FBB750059FDBE /* HomeView.swift in Sources */,
+				D49EAB942B1FBC210059FDBE /* EditGoalView.swift in Sources */,
 				D4CD0C0A2B1C1E0700929452 /* ContentView.swift in Sources */,
 				D49EF1E52B1E58960006F154 /* CodableCoord.swift in Sources */,
 				D4CD0C1B2B1C211400929452 /* Plant.swift in Sources */,
 				D49EF1E02B1E3ECC0006F154 /* MoodCalendarViewModel.swift in Sources */,
 				D4CD0C082B1C1E0700929452 /* PlanterApp.swift in Sources */,
+				D49EAB902B1FBB9E0059FDBE /* GardenView.swift in Sources */,
+				D49EAB8E2B1FBB840059FDBE /* LogoutView.swift in Sources */,
+				D49EAB882B1FBB150059FDBE /* LoginView.swift in Sources */,
 				D49EF1DB2B1E3E580006F154 /* Goal.swift in Sources */,
+				D49EAB8A2B1FBB420059FDBE /* SignUpView.swift in Sources */,
+				D49EAB442B1EF65C0059FDBE /* LandingPage.swift in Sources */,
 				D49EF1E12B1E3ECC0006F154 /* PlantViewModel.swift in Sources */,
+				D49EAB982B1FBC510059FDBE /* MoodCalendarView.swift in Sources */,
 				D49EF1E32B1E3F290006F154 /* UserViewModel.swift in Sources */,
 				D4CD0C192B1C208100929452 /* User.swift in Sources */,
 			);
@@ -418,13 +464,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Planter/Preview Content\"";
+				DONT_GENERATE_INFOPLIST_FILE = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Planter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,13 +494,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Planter/Preview Content\"";
+				DONT_GENERATE_INFOPLIST_FILE = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Planter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
