@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Planter
 //
-//  Created by Kory Arfania on 12/2/23.
+//  Created by Kory Arfania.
 //
 
 import SwiftUI
@@ -10,12 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            LandingPage()
         }
-        .padding()
     }
 }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>In order to track progress for physical goals.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>In order to retain the location of where you received a plant.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HedvigLettersSerif-Regular-VariableFont_opsz.ttf</string>
+	</array>
+</dict>
+</plist>
