@@ -24,6 +24,6 @@ struct ProgressBar: View {
     }
 }
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}

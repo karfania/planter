@@ -1,20 +1,20 @@
 //
-//  EditGoalView.swift
-//  tempPlanterViews
+//  AddProgressView.swift
+//  Planter
 //
-//  Created by Kory Arfania on 12/5/23.
+//  Created by Kory Arfania on 12/6/23.
 //
 
 import SwiftUI
 
-struct EditGoalView: View {
+struct AddProgressView: View {
     @ObservedObject var userViewModel: UserViewModel
     
     @State private var goalType = 0
     @State private var unitType = 0
     @State private var amountUnitsStr = ""
     @State private var amountUnits: Double = 0.0
-    @State private var enteredGoal = false
+    @State private var canGoHome = false
     
     let goalTypes = ["Walk", "Run"]
     let unitTypes = ["Steps", "Miles"]
@@ -29,12 +29,14 @@ struct EditGoalView: View {
                 return "Amount of Steps"
         }
     }
-
+    
+    
     var body: some View {
         NavigationView {
-            VStack{
-                Text("What are your goals?")
-                    .font(.custom("Hedvig Letters Serif", size: 60))
+            VStack {
+                
+                Text("Enter your activity details.")
+                    .font(.custom("Hedvig Letters Serif", size: 30))
                     .padding(.top, 100)
                 
                 Picker("Activity", selection: $goalType) {
@@ -76,42 +78,47 @@ struct EditGoalView: View {
                     
                     // call updateGoals method and mark flag to continue as true
                     if goalType < goalTypes.count {
-                        userViewModel.setDailyGoal(
-                            type: goalTypes[goalType],
-                            unit: unitTypes[unitType],
-                            goalAmount: amountUnits,
-                            progress: userViewModel.user?.dailyGoal.progress ?? 0
+                        userViewModel.addUserActivityProgress (
+                            type: userViewModel.user?.dailyGoal.type ?? "Walk",
+                            unit: userViewModel.user?.dailyGoal.unit ?? "Steps",
+                            amount: amountUnits,
+                            date: Date()
                         ) { result in
                         switch result {
                             case .success(let user):
                                 print("Successfully updated goal")
-                                enteredGoal = true
+                                // check if they surpassed their target, in which case add a new plant to their collection
+                                if userViewModel.user!.dailyGoal.progress >= userViewModel.user!.dailyGoal.goalAmount {
+                                    // add plant to user's plant list
+                                    userViewModel.addPlantToUserCollection()
+                                }
+                            canGoHome = true
                             case .failure(let error):
                                 print("Error updating goal")
-                                enteredGoal = false }
+                            canGoHome = false }
                         }
 
                     } else {
                         // Handle the situation where goalType index is out of bounds or nil
                         print("Invalid goalType index or nil value.")
-                        enteredGoal = false
+                        canGoHome = false
                     }
+                }
+                
+                Button("Cancel") {
+                    canGoHome = true
                 }
                 
                 NavigationLink(
                     destination: HomeView(userViewModel: userViewModel).navigationBarBackButtonHidden(),
-                    isActive: $enteredGoal,
+                    isActive: $canGoHome,
                     label: {
                         EmptyView()
                     })
                 .padding()
-                
             }
+            
         }
-        
-        
-        
-        
         
         
     }

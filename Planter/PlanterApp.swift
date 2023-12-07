@@ -23,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct PlanterApp: App {
     
     // injecting UserViewModel for persistence
-    @StateObject private var userViewModel = UserViewModel()
+    // @StateObject private var userViewModel = UserViewModel()
     
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
