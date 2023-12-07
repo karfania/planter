@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoodCalendarView: View {
-    
+    @ObservedObject var userViewModel: UserViewModel
     
     var body: some View {
         VStack {

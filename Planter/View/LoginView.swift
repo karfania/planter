@@ -34,20 +34,34 @@ struct LoginView: View {
             .keyboardType(.emailAddress)
         
         Button("Login") {
-//            // Using FireAuth login in UserViewModel to log in user
-//            userViewModel.loginUser(email: _email, password: _password)
-//            // Check if successful
-//            if let user = userViewModel.user {
-//                isLoggedIn = true
-//            }
+            // Using FireAuth login in UserViewModel to log in user
+            userViewModel.loginUser(email: _email, password: _password) { result in
+                switch result {
+                case .success(_):
+                    print("Successfully logged in")
+                    loginError = false
+                    isLoggedIn = true
+                case .failure(let error):
+                    print("Error logging in: \(error.localizedDescription)")
+                    loginError = true
+                    isLoggedIn = false
+                }
+                
+            }
         }
             .padding()
             .foregroundColor(.white)
             .background(Color(red: 157/255, green: 193/255, blue: 131/255))
             .cornerRadius(10)
         
+        if let errorMessage = userViewModel.authViewModel.error {
+            Text(errorMessage)
+                .foregroundStyle(Color(.red))
+                .padding()
+        }
+        
         NavigationLink(
-            destination: HomeView(),
+            destination: HomeView(userViewModel: userViewModel).navigationBarBackButtonHidden(),
             isActive: $isLoggedIn,
             label: {
                 EmptyView()

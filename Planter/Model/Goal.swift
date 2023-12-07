@@ -6,33 +6,36 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 // Goal Model: represents a single daily goal and its information
-struct Goal: Identifiable, Codable {
-    
-    enum GoalType: String, Codable {
-        case walking
-        case running
-    }
-    enum GoalUnit: String, Codable {
-        case steps
-        case miles
-    }
-    let id: String
-    var type: GoalType
-    var unit: GoalUnit
+struct Goal: Codable {
+
+    // let id: String
+    var type: String
+    var unit: String
     var goalAmount: Double
     var progress: Double
     var completed: Bool
-    let dateAssigned: Date
+    var dateAssigned: String
 
-    init(id: String = UUID().uuidString, type: GoalType, unit: GoalUnit, goalAmount: Double, progress: Double, completed: Bool, dateAssigned: Date) {
-        self.id = id
+    init(id: String = UUID().uuidString, type: String, unit: String, goalAmount: Double, progress: Double, completed: Bool, dateAssigned: String) {
         self.type = type
         self.unit = unit
         self.goalAmount = goalAmount
         self.progress = progress
         self.completed = completed
         self.dateAssigned = dateAssigned
+    }
+    
+    // default constructor
+    init() {
+        self.type = "Walk"
+        self.unit = "Steps"
+        self.goalAmount = 0.0
+        self.progress = 0.0
+        self.completed = false
+        self.dateAssigned = "01/01/1970"
+
     }
 }

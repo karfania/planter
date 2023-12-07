@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GardenView: View {
+    @ObservedObject var userViewModel: UserViewModel
     
     
     var body: some View {

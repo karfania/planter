@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct LandingPage: View {
-    @StateObject private var userViewModel = UserViewModel()
-    
-    
+    @ObservedObject var userViewModel: UserViewModel
+
     var body: some View {
         NavigationView {
             VStack{
@@ -26,15 +25,14 @@ struct LandingPage: View {
                     .offset(y: -50)
         
                     HStack {
-                        NavigationLink(destination: LoginView(userViewModel: userViewModel)) {
+                        NavigationLink(destination: LoginView(userViewModel: userViewModel).navigationBarBackButtonHidden()) {
                             Text("Login")
                                 .font(.title)
                                 .bold()
                             
                         }
                         
-                        
-                        NavigationLink(destination: SignUpView()) {
+                        NavigationLink(destination: SignUpView(authViewModel: userViewModel.authViewModel, userViewModel: userViewModel).navigationBarBackButtonHidden()) {
                             Text("Sign Up")
                                 .font(.title)
                                 .bold()
@@ -44,13 +42,26 @@ struct LandingPage: View {
                     .padding(.top, 30)
                 }
                 
-                
-                
                 Spacer()
         }
+        .onAppear {
+            if userViewModel.user != nil {
+                userViewModel.logoutUser() { result in
+                    switch result {
+                    case .success(_):
+                        print("Successfully signed out")
+              
+                    case .failure(let error):
+                        print("Error signing out: \(error.localizedDescription)")
+         
+                    }
+                }
+            }
+        }
     }
+        
 }
 
-#Preview {
-    LandingPage()
-}
+//#Preview {
+//    LandingPage()
+//}

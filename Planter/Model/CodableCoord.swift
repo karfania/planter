@@ -2,13 +2,13 @@
 //  CodableCoord.swift
 //  Planter
 //
-//  Created by Kory Arfania on 12/4/23.
+//  Created by Kory Arfania.
 //
 
 import Foundation
 import CoreLocation
 
-// CodableCoord: wrapper for CLLocationCoordinate2D to enable encode/decode functionality
+/* CodableCoord: wrapper for CLLocationCoordinate2D to enable encode/decode functionality */
 struct CodableCoord: Codable {
     var lat: CLLocationDegrees
     var long: CLLocationDegrees

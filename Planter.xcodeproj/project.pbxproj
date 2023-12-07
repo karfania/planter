@@ -35,6 +35,16 @@
 		D42471322B1E3D0F00FAD4BE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D42471312B1E3D0F00FAD4BE /* FirebaseStorage */; };
 		D42471342B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D42471332B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community */; };
 		D443002D2B1E612700D72A51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D443002C2B1E612700D72A51 /* GoogleService-Info.plist */; };
+		D497053F2B20275B00873DBF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497053E2B20275B00873DBF /* AuthViewModel.swift */; };
+		D49705472B203FE600873DBF /* PlanterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49705462B203FE600873DBF /* PlanterTests.swift */; };
+		D497054E2B20402900873DBF /* AuthViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497054D2B20402900873DBF /* AuthViewModelTests.swift */; };
+		D49705502B20736E00873DBF /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497054F2B20736E00873DBF /* PlantDetailView.swift */; };
+		D49705522B2073A100873DBF /* PlantPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49705512B2073A100873DBF /* PlantPhotoCell.swift */; };
+		D49705552B2073F500873DBF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D49705542B2073F500873DBF /* Kingfisher */; };
+		D49705572B2074EA00873DBF /* PlantDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49705562B2074EA00873DBF /* PlantDetailPage.swift */; };
+		D49705592B2095A200873DBF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49705582B2095A200873DBF /* LocationManager.swift */; };
+		D497055B2B2100C900873DBF /* AddProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497055A2B2100C900873DBF /* AddProgressView.swift */; };
+		D497055D2B21406100873DBF /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497055C2B21406100873DBF /* HealthManager.swift */; };
 		D49EAB442B1EF65C0059FDBE /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB432B1EF65C0059FDBE /* LandingPage.swift */; };
 		D49EAB862B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D49EAB852B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf */; };
 		D49EAB882B1FBB150059FDBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EAB872B1FBB150059FDBE /* LoginView.swift */; };
@@ -60,8 +70,28 @@
 		D4CD0C1B2B1C211400929452 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD0C1A2B1C211400929452 /* Plant.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D49705482B203FE600873DBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4CD0BFC2B1C1E0700929452 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4CD0C032B1C1E0700929452;
+			remoteInfo = Planter;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D443002C2B1E612700D72A51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D497053E2B20275B00873DBF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		D49705442B203FE600873DBF /* PlanterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D49705462B203FE600873DBF /* PlanterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanterTests.swift; sourceTree = "<group>"; };
+		D497054D2B20402900873DBF /* AuthViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTests.swift; sourceTree = "<group>"; };
+		D497054F2B20736E00873DBF /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
+		D49705512B2073A100873DBF /* PlantPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPhotoCell.swift; sourceTree = "<group>"; };
+		D49705562B2074EA00873DBF /* PlantDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailPage.swift; sourceTree = "<group>"; };
+		D49705582B2095A200873DBF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D497055A2B2100C900873DBF /* AddProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgressView.swift; sourceTree = "<group>"; };
+		D497055C2B21406100873DBF /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		D49EAB432B1EF65C0059FDBE /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 		D49EAB852B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HedvigLettersSerif-Regular-VariableFont_opsz.ttf"; sourceTree = "<group>"; };
 		D49EAB872B1FBB150059FDBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -90,6 +120,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D49705412B203FE600873DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4CD0C012B1C1E0700929452 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +147,7 @@
 				D42471222B1E3D0F00FAD4BE /* FirebaseInAppMessaging-Beta in Frameworks */,
 				D42471142B1E3D0F00FAD4BE /* FirebaseDatabaseSwift in Frameworks */,
 				D424711E2B1E3D0F00FAD4BE /* FirebaseFunctions in Frameworks */,
+				D49705552B2073F500873DBF /* Kingfisher in Frameworks */,
 				D42471342B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community in Frameworks */,
 				D424712E2B1E3D0F00FAD4BE /* FirebaseRemoteConfig in Frameworks */,
 				D424710A2B1E3D0F00FAD4BE /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -127,11 +165,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D49705452B203FE600873DBF /* PlanterTests */ = {
+			isa = PBXGroup;
+			children = (
+				D49705462B203FE600873DBF /* PlanterTests.swift */,
+				D497054D2B20402900873DBF /* AuthViewModelTests.swift */,
+			);
+			path = PlanterTests;
+			sourceTree = "<group>";
+		};
 		D4CD0BFB2B1C1E0700929452 = {
 			isa = PBXGroup;
 			children = (
 				D49EAB852B1FBAE90059FDBE /* HedvigLettersSerif-Regular-VariableFont_opsz.ttf */,
 				D4CD0C062B1C1E0700929452 /* Planter */,
+				D49705452B203FE600873DBF /* PlanterTests */,
 				D4CD0C052B1C1E0700929452 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				D4CD0C042B1C1E0700929452 /* Planter.app */,
+				D49705442B203FE600873DBF /* PlanterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +242,10 @@
 				D49EAB932B1FBC210059FDBE /* EditGoalView.swift */,
 				D49EAB952B1FBC400059FDBE /* ProgressBar.swift */,
 				D49EAB972B1FBC510059FDBE /* MoodCalendarView.swift */,
+				D497054F2B20736E00873DBF /* PlantDetailView.swift */,
+				D49705562B2074EA00873DBF /* PlantDetailPage.swift */,
+				D49705512B2073A100873DBF /* PlantPhotoCell.swift */,
+				D497055A2B2100C900873DBF /* AddProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +256,9 @@
 				D49EF1E22B1E3F290006F154 /* UserViewModel.swift */,
 				D49EF1DD2B1E3ECC0006F154 /* MoodCalendarViewModel.swift */,
 				D49EF1DE2B1E3ECC0006F154 /* PlantViewModel.swift */,
+				D497053E2B20275B00873DBF /* AuthViewModel.swift */,
+				D49705582B2095A200873DBF /* LocationManager.swift */,
+				D497055C2B21406100873DBF /* HealthManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +266,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D49705432B203FE600873DBF /* PlanterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D497054A2B203FE600873DBF /* Build configuration list for PBXNativeTarget "PlanterTests" */;
+			buildPhases = (
+				D49705402B203FE600873DBF /* Sources */,
+				D49705412B203FE600873DBF /* Frameworks */,
+				D49705422B203FE600873DBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D49705492B203FE600873DBF /* PBXTargetDependency */,
+			);
+			name = PlanterTests;
+			productName = PlanterTests;
+			productReference = D49705442B203FE600873DBF /* PlanterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D4CD0C032B1C1E0700929452 /* Planter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4CD0C122B1C1E0800929452 /* Build configuration list for PBXNativeTarget "Planter" */;
@@ -251,6 +325,7 @@
 				D424712F2B1E3D0F00FAD4BE /* FirebaseRemoteConfigSwift */,
 				D42471312B1E3D0F00FAD4BE /* FirebaseStorage */,
 				D42471332B1E3D0F00FAD4BE /* FirebaseStorageCombine-Community */,
+				D49705542B2073F500873DBF /* Kingfisher */,
 			);
 			productName = Planter;
 			productReference = D4CD0C042B1C1E0700929452 /* Planter.app */;
@@ -266,6 +341,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					D49705432B203FE600873DBF = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = D4CD0C032B1C1E0700929452;
+					};
 					D4CD0C032B1C1E0700929452 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -282,17 +361,26 @@
 			mainGroup = D4CD0BFB2B1C1E0700929452;
 			packageReferences = (
 				D42470FE2B1E3D0F00FAD4BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D49705532B2073F500873DBF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = D4CD0C052B1C1E0700929452 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D4CD0C032B1C1E0700929452 /* Planter */,
+				D49705432B203FE600873DBF /* PlanterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D49705422B203FE600873DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4CD0C022B1C1E0700929452 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,12 +395,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D49705402B203FE600873DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D497054E2B20402900873DBF /* AuthViewModelTests.swift in Sources */,
+				D49705472B203FE600873DBF /* PlanterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4CD0C002B1C1E0700929452 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D49EF1D92B1E3E300006F154 /* MoodCalendar.swift in Sources */,
+				D497055B2B2100C900873DBF /* AddProgressView.swift in Sources */,
 				D49EAB962B1FBC400059FDBE /* ProgressBar.swift in Sources */,
+				D49705592B2095A200873DBF /* LocationManager.swift in Sources */,
 				D49EAB922B1FBC0C0059FDBE /* EditProfileView.swift in Sources */,
 				D49EAB8C2B1FBB750059FDBE /* HomeView.swift in Sources */,
 				D49EAB942B1FBC210059FDBE /* EditGoalView.swift in Sources */,
@@ -321,22 +420,69 @@
 				D4CD0C1B2B1C211400929452 /* Plant.swift in Sources */,
 				D49EF1E02B1E3ECC0006F154 /* MoodCalendarViewModel.swift in Sources */,
 				D4CD0C082B1C1E0700929452 /* PlanterApp.swift in Sources */,
+				D49705522B2073A100873DBF /* PlantPhotoCell.swift in Sources */,
 				D49EAB902B1FBB9E0059FDBE /* GardenView.swift in Sources */,
 				D49EAB8E2B1FBB840059FDBE /* LogoutView.swift in Sources */,
 				D49EAB882B1FBB150059FDBE /* LoginView.swift in Sources */,
 				D49EF1DB2B1E3E580006F154 /* Goal.swift in Sources */,
 				D49EAB8A2B1FBB420059FDBE /* SignUpView.swift in Sources */,
+				D49705502B20736E00873DBF /* PlantDetailView.swift in Sources */,
+				D497055D2B21406100873DBF /* HealthManager.swift in Sources */,
 				D49EAB442B1EF65C0059FDBE /* LandingPage.swift in Sources */,
 				D49EF1E12B1E3ECC0006F154 /* PlantViewModel.swift in Sources */,
+				D497053F2B20275B00873DBF /* AuthViewModel.swift in Sources */,
 				D49EAB982B1FBC510059FDBE /* MoodCalendarView.swift in Sources */,
 				D49EF1E32B1E3F290006F154 /* UserViewModel.swift in Sources */,
 				D4CD0C192B1C208100929452 /* User.swift in Sources */,
+				D49705572B2074EA00873DBF /* PlantDetailPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D49705492B203FE600873DBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4CD0C032B1C1E0700929452 /* Planter */;
+			targetProxy = D49705482B203FE600873DBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D497054B2B203FE600873DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.PlanterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Planter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Planter";
+			};
+			name = Debug;
+		};
+		D497054C2B203FE600873DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.PlanterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Planter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Planter";
+			};
+			name = Release;
+		};
 		D4CD0C102B1C1E0800929452 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -519,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D497054A2B203FE600873DBF /* Build configuration list for PBXNativeTarget "PlanterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D497054B2B203FE600873DBF /* Debug */,
+				D497054C2B203FE600873DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4CD0BFF2B1C1E0700929452 /* Build configuration list for PBXProject "Planter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -546,6 +701,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 10.18.0;
+			};
+		};
+		D49705532B2073F500873DBF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -685,6 +848,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D42470FE2B1E3D0F00FAD4BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		D49705542B2073F500873DBF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D49705532B2073F500873DBF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
